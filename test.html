@@ -1,0 +1,28 @@
+<html>
+  <body>
+    <canvas id="canvas" style="border: 1px solid #000"></canvas>
+    <script src="./dist/blue-stage.js"></script>
+    <script>
+      const { Stage, TextView, View } = BlueStage;
+      const stage = new Stage({
+        el: `#canvas`,
+        width: 500,
+        height: 500,
+      });
+      const viewBox = new View({
+        x: 30,
+        y: 40,
+        width: 200,
+        height: 200,
+      });
+      viewBox.append(
+        new TextView({
+          content: `value`,
+        })
+      );
+      stage.append(viewBox);
+      stage.render();
+      console.log(stage);
+    </script>
+  </body>
+</html>
